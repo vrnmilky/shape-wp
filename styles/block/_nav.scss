@@ -1,0 +1,42 @@
+@use '../base/utils' as *;
+
+.nav {
+
+    margin-bottom: 27px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-family: var(--font-family-accent);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 29.26px;
+        color: var(--color-accent);
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 50px;
+        align-items: center;
+
+        @include tablets {
+            display: none;
+        }
+    }
+
+    &__link {
+        color: var(--color-text);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20.83px;
+    }
+
+    &__actions {
+        display: flex;
+        column-gap: 30px;
+    }
+}

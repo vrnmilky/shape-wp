@@ -1,0 +1,28 @@
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding)*2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@mixin laptop {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin mobile {
+    @media screen and (max-width: 540px) {
+        @content;
+    }
+}

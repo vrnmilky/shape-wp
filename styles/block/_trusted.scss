@@ -1,0 +1,26 @@
+@use '../base/utils' as *;
+
+.trusted {
+    text-align: center;
+    margin-bottom: 140px;
+    @include mobile {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 41.66px;
+        color: var(--color-accent);
+        margin-bottom: 40px;
+
+    }
+
+    &__row {
+        display: inline-flex;
+        column-gap: 100px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+}

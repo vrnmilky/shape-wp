@@ -1,0 +1,88 @@
+@use '../base/utils' as *;
+
+.about {
+    margin-bottom: 140px;
+
+    @include mobile {
+        margin-bottom: 40px;
+    }
+
+    &__row {
+        display: flex;
+        column-gap: 100px;
+        justify-content: space-between;
+        align-items: center;
+
+        @include laptop {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 20px;
+        }
+    }
+
+}
+
+
+.about__right {
+    max-width: 437px;
+}
+
+.about-us {
+    margin-bottom: 40px;
+
+    &__title {
+        font-family: var(--font-family-accent);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 40px;
+        color: var(--color-accent);
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+}
+
+
+.about-column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    li {
+        display: flex;
+        column-gap: 30px;
+    }
+}
+
+
+
+
+
+.about-best,
+.about-secure,
+.about-shipping {
+
+    &__block {
+        max-width: 300px;
+    }
+
+    &__title {
+        font-family: var(--font-family-accent);
+        color: var(--color-accent);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
+        margin-bottom: 14px;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--color-text2);
+    }
+
+}

@@ -1,0 +1,20 @@
+@use './base/base';
+@use './base/fonts';
+@use './base/reset';
+@use './base/vars';
+@use './base/utils';
+
+
+// base
+
+
+@use './block/header';
+@use './block/nav';
+@use './block/trusted';
+@use './block/about';
+@use './block/popular';
+@use './block/furniture';
+@use './block/customers';
+@use './block/subscribe';
+@use './block/footer';
+
