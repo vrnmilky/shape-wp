@@ -27,8 +27,7 @@
                 setup_postdata($post);
         ?>
 
-                <li class="popular-card__item">
-                    <!-- src="<?php bloginfo('template_url'); ?>/assets/images/card/1.jpg" alt="" -->
+                <li class="popular-card__item" id="<?php the_ID() ?>">
                     <?php
                     the_post_thumbnail('full', [
                         'class' => 'popular-card__img',
@@ -39,7 +38,7 @@
                     <div class="popular-card-container">
                         <h4 class="popular-card__title"><?php the_title(); ?></h4>
                         <div class="popular-card__ico">
-                            <a class="popular-card-like" href="#!"><img src="<?php bloginfo('template_url'); ?>/assets/images/card/heart.svg" alt="" width="10"
+                            <a id="<?php the_ID() ?>" class="popular-card-like" href="#!"><img src="<?php bloginfo('template_url'); ?>/assets/images/card/heart.svg" alt="" width="10"
                                     height="10"></a>
                             <a href="#!"><img src="<?php bloginfo('template_url'); ?>/assets/images/card/share.svg" alt="" width="10" height="10"></a>
                         </div>
