@@ -9,6 +9,7 @@ body {
 }
 body.no-scroll {
   overflow: hidden;
+  padding-right: var(--scroll-padding);
 }
 
 .btn {
