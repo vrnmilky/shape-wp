@@ -14,6 +14,7 @@ Template Name: Домашняя
     <?php get_template_part('/components/furniture'); ?>
     <?php get_template_part('/components/customers'); ?>
     <?php get_template_part('/components/subscribe'); ?>
+    <?php get_template_part('/components/modal'); ?>
 
 
 

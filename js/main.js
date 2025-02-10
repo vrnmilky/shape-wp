@@ -53,3 +53,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+// modal
+const popularBue = document.querySelectorAll('.popular-card__btn');
+const body = document.querySelector('body');
+const modalOver = document.querySelector('.modal-overlay');
+const modal = document.querySelector('.modal');
+const close = document.querySelectorAll('.close-modal');
+
+popularBue.forEach (e => {
+    e.addEventListener('click', () => {
+        modalOver.style.display = 'block';
+
+    })
+})
+
+modalOver.addEventListener('click', (e) => {
+    if (e.target === modalOver) {
+        modalOver.style.display = 'none';
+    }
+});
+
+close.forEach(e => {
+    e.addEventListener('click', ()=> {
+        modalOver.style.display = 'none';
+    })
+})
+
