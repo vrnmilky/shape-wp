@@ -4,20 +4,30 @@ const getInputNum = function (input) {
     return input.replace(/\D/g, '');
 }
 
-const onPhoneInput = function (input) {
-    inputNumValue = getInputNum(input.target.value)
-    formattedNum = ''
+const onPhoneInput = function (e) {
+    input = e.target
+    let inputNumValue = getInputNum(input.value)
+    let formattedNum = ''
+    let selectionStart = input.selectionStart
+
     if (!inputNumValue) {
-        return input.target.value = ''
+        return input.value = ''
     }
 
+    if (selectionStart != input.value.length ) {
+        if (e.data && /\D/g.test(e.data)) {
+            input.value = inputNumValue
+        }
+        return;
+    }
+
+
     if (['7', '8', '9'].includes(inputNumValue[0])) {
-        //русский номер
         if (inputNumValue[0] == '9') inputNumValue = '7' + inputNumValue;
         const firstSumbols = (inputNumValue[0] == '8') ? '8' : '+7';
-        formattedNum = firstSumbols + ' '
+        formattedNum = firstSumbols + ''
         if (inputNumValue.length > 1) {
-            formattedNum += '(' + inputNumValue.slice(1, 4) ;
+            formattedNum += '(' + inputNumValue.slice(1, 4);
         }
         if (inputNumValue.length > 4) {
             formattedNum += ')-' + inputNumValue.slice(4, 7);
@@ -28,14 +38,13 @@ const onPhoneInput = function (input) {
         if (inputNumValue.length > 9) {
             formattedNum += '-' + inputNumValue.slice(9, 11);
         }
-        console.log(formattedNum);
+        input.value = formattedNum
+
+
     }
     else {
-        //не русский
-        formattedNum = input.target.value = '+' + inputNumValue.slice(0, 16);
+        input.value = '+' + inputNumValue.slice(0, 16);
     }
-    // 
 }
 
 phone.addEventListener('input', onPhoneInput);
-console.log(formattedNum);
