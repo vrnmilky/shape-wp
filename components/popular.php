@@ -20,6 +20,7 @@
 
         $myposts = get_posts([
             'numberposts' => 4,
+            'category_name'    => 'Популярное' ,
         ]);
 
         if ($myposts) {
