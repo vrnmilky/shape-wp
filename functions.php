@@ -44,6 +44,7 @@ function theme_name_scripts()
     wp_enqueue_script('like', get_template_directory_uri() . '/js/like.js', array(), '1.0.0', true);
     wp_enqueue_script('modal', get_template_directory_uri() . '/js/modal.js', array(), '1.0.0', true);
     wp_enqueue_script('phoneFormat', get_template_directory_uri() . '/js/phoneFormat.js', array(), '1.0.0', true);
+    wp_enqueue_script('popularPost', get_template_directory_uri() . '/js/popularPost.js', array(), '1.0.0', true);
 
     // Массив с изображениями для мебели
     $images = array(
