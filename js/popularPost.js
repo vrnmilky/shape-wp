@@ -13,37 +13,38 @@ function getPostsPerPage() {
 // Получаем количество постов на странице
 let postsPerPage = getPostsPerPage();
 
-// function fetchPosts() {
-//     var xhr = new XMLHttpRequest();
-//     var params = 'action=load_posts&posts_per_page=' + postsPerPage;  // Параметры запроса
 
-//     // Открытие соединения с сервером
-//     xhr.open('POST', '/wp-admin/admin-ajax.php', true);
+const requestData = {
+    action: 'count_product',
+    size: postsPerPage
+}
 
-//     // Установка заголовков для отправки данных как POST
-//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+const queryData = new URLSearchParams();
+for (const key in requestData) {
+    queryData.set(key, requestData[key])
+}
 
-//     // Обработка ответа от сервера
-//     xhr.onload = function() {
-//         if (xhr.status === 200) {
-//             // Выводим ответ от сервера (например, список постов)
-//             var postsContainer = document.querySelector('.popular-card'); // Используем querySelector
-//             if (postsContainer) {
-//                 postsContainer.innerHTML = xhr.responseText; // Обновляем содержимое
-//             } else {
-//                 console.error('Контейнер с классом "popular-card" не найден.');
-//             }
-//         } else {
-//             console.error('Ошибка при запросе: ', xhr.statusText);
-//         }
-//     };
+fetch(myajax.url, {
+    method: "POST",
+    body: queryData,
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+})
+    .then(response => response.text())
+    .then(response => {
+        console.log(response);
+    });
 
-//     // Отправляем запрос
-//     xhr.send(params);
-// }
 
-// // Вызываем функцию для загрузки записей
-// fetchPosts();
+
+
+
+
+
+
+
+
 
 function manageNavBtn() {
     popularNav = document.querySelector('.popular-description-nav');
@@ -67,13 +68,11 @@ function manageNavBtn() {
 
 
     if (left && !right) {
-        console.log('Только левая')
         popularNav.appendChild(addBtn);
         addBtn.classList.add('popular-description-nav__btn--right-not_active');
 
     }
     else if (!left && right) {
-        console.log('Только правая');
         nextElement = popularNav.querySelector('.next')
         popularNav.insertBefore(addBtn, nextElement);
         addBtn.classList.add('popular-description-nav__btn--left-not_active');
@@ -83,7 +82,7 @@ function manageNavBtn() {
         console.log('Ошибка стрелки не найдены!')
     }
     else {
-        console.log('Обе стрелки')
+        // console.log('Обе стрелки')
     }
 }
 

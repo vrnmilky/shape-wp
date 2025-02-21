@@ -1,4 +1,19 @@
 <?php
+
+add_action('wp_head', 'myajax_data', 8);
+function myajax_data()
+{
+    $data = [
+        'url' => admin_url('admin-ajax.php'),
+    ];
+?>
+    <script id="myajax_data">
+        myajax = <?= wp_json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>
+    </script>
+<?php
+}
+
+
 add_action('wp_enqueue_scripts', 'theme_name_scripts');
 function theme_name_scripts()
 {
@@ -72,4 +87,15 @@ add_action('after_setup_theme', 'my_theme_setup');
 add_theme_support('post-thumbnails');
 add_theme_support('title-tag');
 add_theme_support('custom-logo ');
-?>
+
+// http://localhost:8080/wp-admin/admin-ajax.php?action=count_product?size=1
+
+add_action('wp_ajax_count_product', 'count_product');
+add_action('wp_ajax_nopriv_count_product', 'count_product');
+
+function count_product()
+{
+    $countProduct = intval($_POST['size']);
+    echo $countProduct;
+    wp_die();
+}

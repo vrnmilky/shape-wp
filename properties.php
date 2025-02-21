@@ -1,20 +1,16 @@
 <?php
 /*
-Template Name: Особенности
+Template Name: popular
 */
 ?>
 <?php get_header(); ?>
 <main>
     <section class="popular container">
-
-
         <?php
-        $countProduct = 3;
-
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
             'post_type' => 'product',  // Тип записи
-            'posts_per_page' => $countProduct,    // Количество записей (-1 означает все)
+            // 'posts_per_page' => ,    // Количество записей (-1 означает все)
             'post_status' => 'publish', // Только опубликованные записи
             'paged' => $paged, // Текущая страница
         );
@@ -32,12 +28,12 @@ Template Name: Особенности
                 <?php
                 // Вывод пагинации
                 echo paginate_links(array(
-                    'total' => $query->max_num_pages, // Общее количество страниц
-                    'current' => max(1, get_query_var('paged')), // Текущая страница
-                    'format' => '?paged=%#%', // Формат URL для пагинации
-                    'show_all' => false, // Не показывать все страницы
-                    'end_size' => 0, // Убрать страницы в начале и в конце
-                    'mid_size' => 0, // Убрать страницы в середине
+                    'total' => $query->max_num_pages, 
+                    'current' => max(1, get_query_var('paged')),
+                    'format' => '?paged=%#%', 
+                    'show_all' => false, 
+                    'end_size' => 0, 
+                    'mid_size' => 0,
                     'prev_text' => '<button class="popular-description-nav__btn popular-description-nav__btn--left"></button>', // Стрелка назад
                     'next_text' => '<button class="popular-description-nav__btn popular-description-nav__btn--right"></button>', // Стрелка вперед
                 ));
@@ -45,7 +41,7 @@ Template Name: Особенности
             </div>
         </div>
 
-        <ul class="popular-card">
+        <ul class="popular-card popular_page-card">
             <?php if ($query->have_posts()) : ?>
 
                 <!-- цикл -->
@@ -83,14 +79,10 @@ Template Name: Особенности
                     </li>
 
                 <?php endwhile; ?>
-                <!-- конец цикла -->
-
-
-
                 <?php wp_reset_postdata(); ?>
 
             <?php else : ?>
-                <p><?php esc_html_e('Нет постов по вашим критериям.'); ?></p>
+                <p><?php esc_html_e('Нет постов'); ?></p>
             <?php endif; ?>
         </ul>
 

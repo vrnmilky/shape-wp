@@ -415,7 +415,7 @@ legend {
   border-radius: 50%;
   padding: 12px;
   width: 40px;
-  aspect-ratio: 1;
+  height: 40px;
 }
 .popular-description-nav__btn:hover {
   background-color: var(--color-after);
@@ -544,6 +544,15 @@ legend {
 }
 .popular-card__btn:hover {
   background-color: var(--color-head);
+}
+
+.popular_page-card {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1fr, auto);
+  grid-template-rows: auto;
+  gap: 20px 30px;
+  justify-content: center;
 }
 
 .furniture {
