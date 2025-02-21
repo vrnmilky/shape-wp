@@ -8,6 +8,12 @@
     display: none !important;
 }
 
+@mixin miniDesct {
+    @media screen and (max-width: 1260px) {
+        @content;
+    }
+}
+
 @mixin laptop {
     @media screen and (max-width: 992px) {
         @content;
@@ -26,3 +32,6 @@
         @content;
     }
 }
+
+
+

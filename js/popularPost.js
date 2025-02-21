@@ -44,3 +44,48 @@ let postsPerPage = getPostsPerPage();
 
 // // Вызываем функцию для загрузки записей
 // fetchPosts();
+
+function manageNavBtn() {
+    popularNav = document.querySelector('.popular-description-nav');
+    left = false;
+    right = false;
+
+    addBtn = document.createElement('button');
+    addBtn.disabled = true;
+    addBtn.classList.add('popular-description-nav__btn');
+
+    popularNav.querySelectorAll('*').forEach(e => {
+        if (e.classList.contains('prev')) {
+            left = true;
+            return
+        }
+        if (e.classList.contains('next')) {
+            right = true;
+            return
+        }
+    })
+
+
+    if (left && !right) {
+        console.log('Только левая')
+        popularNav.appendChild(addBtn);
+        addBtn.classList.add('popular-description-nav__btn--right-not_active');
+
+    }
+    else if (!left && right) {
+        console.log('Только правая');
+        nextElement = popularNav.querySelector('.next')
+        popularNav.insertBefore(addBtn, nextElement);
+        addBtn.classList.add('popular-description-nav__btn--left-not_active');
+
+    }
+    else if (!left && !right) {
+        console.log('Ошибка стрелки не найдены!')
+    }
+    else {
+        console.log('Обе стрелки')
+    }
+}
+
+
+manageNavBtn();
