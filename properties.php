@@ -28,11 +28,11 @@ Template Name: popular
                 <?php
                 // Вывод пагинации
                 echo paginate_links(array(
-                    'total' => $query->max_num_pages, 
+                    'total' => $query->max_num_pages,
                     'current' => max(1, get_query_var('paged')),
-                    'format' => '?paged=%#%', 
-                    'show_all' => false, 
-                    'end_size' => 0, 
+                    'format' => '?paged=%#%',
+                    'show_all' => false,
+                    'end_size' => 0,
                     'mid_size' => 0,
                     'prev_text' => '<button class="popular-description-nav__btn popular-description-nav__btn--left"></button>', // Стрелка назад
                     'next_text' => '<button class="popular-description-nav__btn popular-description-nav__btn--right"></button>', // Стрелка вперед
@@ -47,15 +47,18 @@ Template Name: popular
                 <!-- цикл -->
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <li class="popular-card__item" id="<?php the_ID() ?>">
-                        <?php
-                        the_post_thumbnail('full', [
-                            'class' => 'popular-card__img',
-                            'width' => '380',
-                            'height' => '247',
-                        ]);
-                        ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php
+                            the_post_thumbnail('full', [
+                                'class' => 'popular-card__img',
+                                'width' => '380',
+                                'height' => '247',
+                            ]);
+                            ?></a>
                         <div class="popular-card-container">
-                            <h4 class="popular-card__title"><?php the_title(); ?></h4>
+                            <a href="<?php the_permalink(); ?>">
+                                <h4 class="popular-card__title"><?php the_title(); ?></h4>
+                            </a>
                             <div class="popular-card__ico">
                                 <a id="<?php the_ID() ?>" class="popular-card-like" href="#!"><img src="<?php bloginfo('template_url'); ?>/assets/images/card/heart.svg" alt="" width="10"
                                         height="10"></a>

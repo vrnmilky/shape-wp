@@ -47,7 +47,6 @@
     &-buttons {
         & p {
             display: flex;
-            column-gap: 10px;
         }
 
         & button {
@@ -55,6 +54,9 @@
             background-color: var(--color-accent);
             color: #fff;
             margin-bottom: 10px;
+            &:first-of-type {
+                margin-right: 15px;
+            }
 
             &:hover {
                 background-color: var(--color-head);

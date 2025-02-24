@@ -1,0 +1,63 @@
+@use '../base/utils' as *;
+
+.product-detail {
+    min-height: calc(100vh - var(--header-Height) - var(--footer-Height));
+
+    &-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        @include tablets {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &-left {
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+
+        @include tablets {
+            width: 100%;
+        }
+
+        & img {
+            width: 100%;
+        }
+
+    }
+
+    &-right {
+        width: 50%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablets {
+            width: 100%;
+        }
+    }
+
+    &-title {
+        color: var(--color-accent);
+        text-align: center;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 41.66px;
+        margin-bottom: 30px;
+    }
+
+    &-text {
+        margin-bottom: 30px;
+    }
+
+
+    &-price { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
