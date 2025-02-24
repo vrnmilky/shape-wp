@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <section class="popular container">
     <h3>Популярная мебель</h3>
     <div class="popular-description">
@@ -8,19 +13,18 @@
             <button class="popular-description-nav__btn">
                 <img src="<?php bloginfo('template_url'); ?>/assets/images/arrow2.svg" alt="" width="16" height="16">
             </button>
-            <button class="popular-description-nav__btn">
+            <a class="popular-description-nav__btn" href="<?php echo get_permalink(get_page_by_path('popular')); ?>">
                 <img src="<?php bloginfo('template_url'); ?>/assets/images/arrow1.svg" alt="" width="16" height="16">
-            </button>
+            </a>
         </div>
     </div>
     <ul class="popular-card">
 
         <?php
         global $post;
-
         $myposts = get_posts([
-            'numberposts' => 4,
-            'category_name'    => 'Популярное' ,
+            'numberposts' => $countProduct,
+            'category_name'    => 'Популярное',
         ]);
 
         if ($myposts) {

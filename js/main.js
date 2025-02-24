@@ -18,6 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('active')
         })
     });
+
+
+
+
+    const menuBtn = document.querySelector('.nav__actions--menu');
+    const openMenu = document.querySelector('.menu__container');
+    const body = document.querySelector('body');
+    menuBtn.addEventListener('click', () => {
+        console.log('Нажал');
+        body.classList.toggle('no-scroll');
+        openMenu.classList.toggle('open');
+        menuBtn.classList.toggle('open');
+    })
+
 });
 
 

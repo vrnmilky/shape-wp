@@ -13,20 +13,21 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <div class="container nav__container">
+                <div class="nav__container">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="nav__logo">DudeShape</a>
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'primary',
                         'menu_class'     => 'nav__list',
-                        'container'      => false,
+                        // 'container'      => false,
+                        'container_class' => 'menu__container',
                         'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
                         'fallback_cb'    => false,
                     ));
                     ?>
                     <div class="nav__actions">
-                        <a href="#!"><img class="nav__actions--search" src="<?php bloginfo('template_url'); ?>/assets/icons/loupe.svg" alt="Поиск"></a>
-                        <a href="#!"><img class="nav__actions--menu" src="<?php bloginfo('template_url'); ?>/assets/icons/menu.svg" alt="Меню"></a>
+                        <a class="nav__actions--search" href="#!"><img src="<?php bloginfo('template_url'); ?>/assets/icons/loupe.svg" alt="Поиск"></a>
+                        <a class="nav__actions--menu" href="#!"><span></span><span></span><span></span></a>
                     </div>
                 </div>
             </nav>

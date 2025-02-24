@@ -2,6 +2,7 @@ body {
   font-family: var(--font-family-base);
   background-color: var(--color-main);
   color: var(--color-text);
+  overflow-x: hidden;
 }
 
 .btn {
@@ -11,6 +12,11 @@ body {
 
 a {
   color: inherit;
+}
+
+.no-scroll {
+  overflow: hidden;
+  padding-right: var(--scroll-padding);
 }
 
 @font-face {
@@ -253,9 +259,24 @@ legend {
   column-gap: 50px;
   align-items: center;
 }
+@media screen and (max-width: 992px) {
+  .nav__list {
+    column-gap: 30px;
+  }
+}
 @media screen and (max-width: 768px) {
   .nav__list {
-    display: none;
+    position: fixed;
+    top: inherit;
+    right: inherit;
+    width: 90%;
+    height: 100%;
+    flex-direction: column;
+    background-color: var(--color-main);
+    row-gap: 10px;
+    margin-left: auto;
+    padding-top: 50px;
+    transition: all 0.5s ease;
   }
 }
 .nav__link {
@@ -267,6 +288,65 @@ legend {
 .nav__actions {
   display: flex;
   column-gap: 30px;
+}
+.nav__actions--menu {
+  z-index: 3;
+  width: 24px;
+  height: 24px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+.nav__actions--menu span {
+  display: block;
+  width: 60%;
+  height: 12%;
+  background-color: var(--color-accent);
+  transition: all 0.5s ease;
+}
+.nav__actions--menu span:nth-child(2) {
+  width: 100%;
+}
+.nav__actions--menu span:nth-child(3) {
+  align-self: flex-end;
+}
+.nav__actions--menu.open span:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+  width: 100%;
+  top: 10px;
+  left: 0;
+}
+.nav__actions--menu.open span:nth-child(2) {
+  display: none;
+}
+.nav__actions--menu.open span:nth-child(3) {
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 100%;
+  top: 10px;
+  left: 0;
+}
+@media screen and (max-width: 768px) {
+  .nav__actions--menu {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu__container {
+    position: fixed;
+    width: 100%;
+    height: 100svh;
+    top: 0;
+    right: -100%;
+    background-color: rgba(0, 0, 0, 0.431372549);
+    row-gap: 10px;
+  }
+}
+.menu__container.open {
+  right: 0;
 }
 
 .trusted {
