@@ -21,12 +21,10 @@
 
     <ul class="popular-card">
         <?php
-        // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
             'post_type' => 'product',  // Тип записи
-            'posts_per_page' => 3,    // Количество записей (-1 означает все)
+            'posts_per_page' => 4,    // Количество записей (-1 означает все)
             'post_status' => 'publish', // Только опубликованные записи
-            // 'paged' => $paged, // Текущая страница
         );
         $paged = get_query_var('page') ?: 1;
 

@@ -3,12 +3,26 @@
         Доверяют 20,000+ компаний
     </h2>
 
-    <ul class="trusted__row">
-        <li> <img src="<?php bloginfo('template_url'); ?>/assets/icons/mastercard.svg" alt=""></li>
-        <li> <img src="<?php bloginfo('template_url'); ?>/assets/icons/airbnb.svg" alt=""></li>
-        <li> <img src="<?php bloginfo('template_url'); ?>/assets/icons/uber.svg" alt=""></li>
-        <li> <img src="<?php bloginfo('template_url'); ?>/assets/icons/paypal.svg" alt=""></li>
-        <li> <img src="<?php bloginfo('template_url'); ?>/assets/icons/visa.svg" alt=""></li>
-        <li> <img src="<?php bloginfo('template_url'); ?>/assets/icons/stripe.svg" alt=""></li>
-    </ul>
+
+    <?php
+    $query = new WP_Query([
+        'post_type' => 'partners',
+        'posts_per_page' => 6,
+        'order'    => 'ASC'
+    ]);
+    if ($query->have_posts()) {
+        echo '<ul class="trusted__row">';
+        while ($query->have_posts()) {
+            $query->the_post();
+            echo '<li>';
+            the_post_thumbnail();
+            echo '</li>';
+        }
+        echo '</ul>';
+    } else {
+        echo 'Постов нету!';
+    }
+
+    wp_reset_postdata();
+    ?>
 </section>

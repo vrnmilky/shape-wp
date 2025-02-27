@@ -3,6 +3,7 @@
 .trusted {
     text-align: center;
     margin-bottom: 140px;
+
     @include mobile {
         margin-bottom: 40px;
     }
@@ -22,5 +23,12 @@
         justify-content: space-evenly;
         flex-wrap: wrap;
         row-gap: 20px;
+
+
+        & li {
+            display: flex;
+            align-items: center;
+            max-width: 150px;
+        }
     }
 }
