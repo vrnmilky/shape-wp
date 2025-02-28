@@ -1182,4 +1182,37 @@ legend {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.contacts {
+  min-height: 100vh;
+}
+.contacts_city_item {
+  height: 90px;
+  overflow: hidden;
+}
+.contacts_city_title {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  cursor: pointer;
+}
+.contacts_city_title:hover {
+  background-color: var(--color-head);
+  color: #fff;
+}
+.contacts_city_title.active {
+  background-color: var(--color-head);
+  color: #fff;
+}
+.contacts_city_content {
+  height: 100%;
+  border: 1.5px solid #D9DCE5;
+}
+.contacts_active {
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */
