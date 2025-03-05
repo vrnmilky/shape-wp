@@ -1212,6 +1212,71 @@ legend {
 .contacts_city_content {
   height: 100%;
   border: 1.5px solid #D9DCE5;
+  padding: 20px;
+}
+.contacts_city_block {
+  display: flex;
+  gap: 30px;
+}
+.contacts_city_block:not(:last-child) {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid #D9DCE5;
+}
+@media screen and (max-width: 768px) {
+  .contacts_city_block {
+    flex-wrap: wrap;
+  }
+}
+.contacts_city_map {
+  min-width: 50%;
+}
+@media screen and (max-width: 540px) {
+  .contacts_city_map {
+    pointer-events: none;
+    max-height: 300px;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contacts_city_map {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+}
+.contacts_city_map iframe {
+  height: 100%;
+  width: 100%;
+}
+.contacts_city_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+.contacts_city_info-title {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-family-accent);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid #D9DCE5;
+}
+.contacts_city_info img {
+  width: 100%;
+}
+.contacts_city_subtitle {
+  font-family: var(--font-family-accent);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-accent);
 }
 .contacts_active {
   height: 100%;
