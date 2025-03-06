@@ -17,6 +17,13 @@ cityElem.forEach((city) => {
 
       city.classList.toggle("contacts_active");
       title.classList.toggle("active");
+
+      if (city.classList.contains("contacts_active")) {
+        city.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     });
   }
 });
