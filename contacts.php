@@ -49,7 +49,13 @@ Template Name: contacts
 
                                         <div class="contacts_city_block">
                                             <div class="contacts_city_map">
-                                                <?php echo $map ?>
+                                                <?php 
+                                                if ($map){
+                                                    echo $map;
+                                                }
+                                                else {
+                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image-map.jpg" alt="Заглушка">'; 
+                                                } ?>
                                             </div>
 
                                             <div class="contacts_city_info">
@@ -73,7 +79,7 @@ Template Name: contacts
                                                 if (has_post_thumbnail()) {
                                                     the_post_thumbnail(); // Выводим изображение с заданным размером
                                                 } else {
-                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image-office.jpeg" alt="Заглушка" class="default-thumbnail">';
+                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image-office.jpg" alt="Заглушка" class="default-thumbnail">';
                                                 }
                                                 ?>
                                             </div>

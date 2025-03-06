@@ -1,7 +1,11 @@
 @use "../base/utils" as *;
 
+
+
 .product-detail {
     min-height: calc(100vh - var(--header-Height) - var(--footer-Height));
+
+
 
     &-container {
         width: 100%;

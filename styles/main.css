@@ -1248,6 +1248,10 @@ legend {
   height: 100%;
   width: 100%;
 }
+.contacts_city_map img {
+  height: 100%;
+  width: 100%;
+}
 .contacts_city_info {
   display: flex;
   flex-direction: column;
