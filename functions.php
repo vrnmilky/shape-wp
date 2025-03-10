@@ -100,3 +100,45 @@ function count_product()
     echo $countProduct;
     wp_die();
 }
+
+
+// Удалить пустые P
+function remove_empty_paragraphs($content)
+{
+    // Удаляет пустые <p></p>
+    $content = preg_replace('/<p>\s*<\/p>/i', '', $content);
+    return $content;
+}
+add_filter('the_content', 'remove_empty_paragraphs');
+
+
+function custom_comment_form($args)
+{
+    // Изменим стандартные аргументы
+    $args['title_reply'] = 'Оставьте комментарий';
+    $args['label_submit'] = 'Отправить';
+
+    // Стилизация отдельных полей
+    $args['comment_field'] =
+        '<p class="news_comment_form-comment">
+            <label for="comment" class="news_comment_form-label">Ваш комментарий:</label>
+            <textarea
+              id="comment"
+              name="comment"
+              aria-required="true"
+              class="news_comment_form-text"
+            ></textarea>
+          </p>';
+    $args['author_field'] = '<p class="comment-form-author"><label for="author">Ваше имя</label><input id="author" name="author" type="text" value="" size="30" /></p>';
+    $args['email_field'] = '<p class="comment-form-email"><label for="email">Ваш email</label><input id="email" name="email" type="email" value="" size="30" /></p>';
+    return $args;
+}
+add_filter('comment_form_defaults', 'custom_comment_form');
+
+add_filter('comment_form_default_fields', 'comment_form_default_add_my_fields');
+function comment_form_default_add_my_fields($fields)
+{
+    unset($fields['url']);
+
+    return $fields;
+}
