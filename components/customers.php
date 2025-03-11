@@ -5,27 +5,43 @@
         </div>
 
         <div class="customers__right">
-            <h3 class="customers__right-title">Наши клиенты очень важны для нас</h3>
-            <p class="customers__right-text">Во всей нашей мебели используются лучшие материалы.Во всей нашей
-                мебели используются лучшие материалы</p>
-            <div class="customers__autor">
-                <div class="customers__autor-avatar">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/costumers/ava.jpg" alt="" width="50" height="50">
-                </div>
-                <div class="customers__autor_rating">
-                    <div class="customers__autor-name">
-                        Mh Jibon
-                    </div>
-                    <div class="customers__autor_star">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/costumers/star.svg" alt="">
-                        <span class="customers__autor_star-rating">
-                            4.8
-                        </span>
-                    </div>
+            <h2 class="customers__right-popular">Популярные новости</h2>
 
 
+            <?php
+
+            $args = array(
+                'posts_per_page' => 10,
+                'orderby' => 'comment_count',
+            );
+            // запрос
+            $query = new WP_Query($args); ?>
+
+            <?php if ($query->have_posts()) : ?>
+
+
+                <!-- цикл -->
+
+                <div class="news-slider">
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <div class="box">
+                            <h3 class="customers__right-title"><?php the_title(); ?></h3>
+                            <?php the_post_thumbnail(); ?>
+                            <p class="customers__right-text"><?php the_excerpt_rss(); ?></p>
+                        </div>
+                    <?php endwhile; ?>
                 </div>
-            </div>
+
+                <!-- конец цикла -->
+
+                <?php wp_reset_postdata(); ?>
         </div>
+
+    <?php else : ?>
+        <p><?php esc_html_e('Нет постов по вашим критериям.'); ?></p>
+    <?php endif; ?>
+
+    </div>
     </div>
 </section>
+

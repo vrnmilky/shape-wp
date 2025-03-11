@@ -16,12 +16,13 @@
                 </div>
         <?php endwhile;
         endif; ?>
-
-
+        <ul class="news_comment-list">
+            <?php comments_template('/comments-news.php'); ?>
+        </ul>
         <div class="news_comment-form">
             <?php
             if (comments_open() || get_comments_number()) {
-                comment_form();  // Вставка формы комментариев
+                comment_form();
             }
             ?>
         </div>

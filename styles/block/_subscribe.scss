@@ -3,9 +3,10 @@
 .subscribe {
     margin-bottom: 140px;
 
-    @include mobile {
-        margin-bottom: 40px;
+    @include laptop {
+        margin-bottom: 0;
     }
+
 
     &-container {
         background-color: var(--color-bg);

@@ -4,7 +4,7 @@
 
 
 <section class="popular container">
-    <h3>Популярная мебель</h3>
+    <h3><a href="<?php echo get_permalink(get_page_by_path('popular')); ?>">Популярная мебель</a></h3>
     <div class="popular-description">
         <p>Во всей нашей мебели используются лучшие материалы.Во всей нашей мебели используются лучшие
             материалы.

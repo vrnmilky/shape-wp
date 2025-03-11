@@ -58,6 +58,20 @@
 </footer>
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.news-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 5000,
+            arrows: true,
+            dots: true
+        });
+    });
+</script>
+
 <?php wp_footer(); ?> 
 </body>
 

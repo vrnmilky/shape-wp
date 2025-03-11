@@ -1,0 +1,42 @@
+.container-news {
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.news {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    &:not(:last-of-type) {
+        border-bottom: 1.5px solid #D9DCE5;
+    }
+
+    &-title {
+        font-family: var(--font-family-accent);
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: 0%;
+        color: var(--color-accent);
+    }
+
+    &-img,
+    &-text,
+    &-title {
+        margin-bottom: 20px;
+    }
+
+    
+
+    &-link {
+        color: var(--color-accent);
+        display: inline-block;
+    }
+    &-text {
+        position: relative;
+    }
+    & .read_more {
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+    }
+}

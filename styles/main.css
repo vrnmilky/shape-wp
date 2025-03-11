@@ -19,6 +19,10 @@ a {
   padding-right: var(--scroll-padding);
 }
 
+main {
+  min-height: calc(100vh - (var(--footer-Height) + var(--header-Height)));
+}
+
 @font-face {
   font-family: "Open Sans";
   src: url("../../assets/fonts/OpenSans-Medium.woff2") format("woff2");
@@ -165,6 +169,7 @@ legend {
 
 .header {
   padding-top: 44px;
+  z-index: 11;
 }
 @media screen and (max-width: 540px) {
   .header {
@@ -810,23 +815,40 @@ legend {
   justify-content: center;
 }
 .customers__left {
-  max-width: 564px;
+  max-width: 535px;
   position: relative;
-  display: inline-block;
   padding-left: 10%;
+  display: flex;
+}
+.customers__left img {
+  -o-object-fit: none;
+     object-fit: none;
 }
 .customers__left::before {
   content: "";
   position: absolute;
   background-color: var(--color-accent);
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+  top: 0;
   left: 0;
   border-radius: 50%;
   z-index: -1;
+  transform: translate(0%, 5%);
 }
 .customers__right {
   max-width: 535px;
+  max-height: 530px;
+  overflow: hidden;
+}
+.customers__right img {
+  margin-bottom: 20px;
+  max-height: 740px;
+}
+.customers__right-popular {
+  color: var(--color-accent);
+  font-family: var(--font-family-accent);
+  margin-bottom: 30px;
 }
 .customers__right-title {
   font-family: var(--font-family-accent);
@@ -838,20 +860,25 @@ legend {
   font-size: 20px;
   font-weight: 400;
   line-height: 27px;
-  margin-bottom: 40px;
+}
+.customers__right-text a {
+  text-decoration: underline;
+  color: var(--color-accent);
 }
 .customers__autor {
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  align-items: center;
 }
-.customers__autor-avatar {
+.customers__autor-avatar img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 .customers__autor-name {
-  margin-bottom: 8px;
+  color: var(--color-accent);
+  font-family: var(--font-family-accent);
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -872,9 +899,9 @@ legend {
 .subscribe {
   margin-bottom: 140px;
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 992px) {
   .subscribe {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 }
 .subscribe-container {
@@ -1184,6 +1211,9 @@ legend {
   align-items: center;
 }
 
+.news_full {
+  margin-bottom: 30px;
+}
 .news_full__title {
   color: var(--color-accent);
   font-weight: 700;
@@ -1210,15 +1240,21 @@ legend {
   }
 }
 
+.news_comment-content {
+  width: 100%;
+}
 .news_comment-item {
   width: 100%;
   min-height: 100px;
-  background-color: var(--color-bg);
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
   padding: 10px;
   margin-bottom: 30px;
+  border-bottom: 1.5px solid #D9DCE5;
+}
+.news_comment-item:first-of-type {
+  border-top: 1.5px solid #D9DCE5;
 }
 .news_comment-avatar {
   width: 60px;
@@ -1244,10 +1280,11 @@ legend {
 }
 .news_comment-nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   -moz-column-gap: 10px;
        column-gap: 10px;
   flex-wrap: wrap;
+  color: #D9DCE5;
 }
 .news_comment_form-label {
   display: inline-block;
@@ -1283,9 +1320,30 @@ legend {
   background-color: var(--color-accent);
   color: #fff;
 }
+.comment-form-author, .comment-form-email {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.comment-form-author input, .comment-form-email input {
+  border: 1.5px solid #D9DCE5;
+  max-width: 300px;
+}
+.comment-form-author input:focus, .comment-form-email input:focus {
+  border: 2px solid #000000;
+}
+.comment-form-cookies-consent {
+  margin-bottom: 10px;
+}
 
 #reply-title {
   display: none;
+}
+
+.comment-notes {
+  margin-bottom: 10px;
 }
 
 .contacts {
@@ -1388,4 +1446,40 @@ legend {
 }
 .contacts_active {
   height: 100%;
+}
+
+.container-news {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.news {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.news:not(:last-of-type) {
+  border-bottom: 1.5px solid #D9DCE5;
+}
+.news-title {
+  font-family: var(--font-family-accent);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: var(--color-accent);
+}
+.news-img, .news-text, .news-title {
+  margin-bottom: 20px;
+}
+.news-link {
+  color: var(--color-accent);
+  display: inline-block;
+}
+.news-text {
+  position: relative;
+}
+.news .read_more {
+  position: absolute;
+  right: 0;
+  bottom: -30px;
 }/*# sourceMappingURL=main.css.map */

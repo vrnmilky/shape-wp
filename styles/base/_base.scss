@@ -20,3 +20,7 @@ a {
     overflow: hidden;
     padding-right: var(--scroll-padding);
 }
+
+main {
+    min-height: calc(100vh - (var(--footer-Height) + var(--header-Height)));
+}

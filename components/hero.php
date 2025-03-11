@@ -13,7 +13,7 @@
                     </p>
                 </div>
 
-                <a href="#!" class="hero__btn btn">Подробнее</a>
+                <a href="<?php echo get_permalink(get_page_by_path('about')); ?>" class="hero__btn btn">Подробнее</a>
             </div>
         </div>
     </section>
