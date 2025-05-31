@@ -50,7 +50,7 @@
         display: flex;
         column-gap: 30px;
         &--menu {
-            z-index: 3;
+            z-index: 11;
             width: 24px;
             height: 24px;
             display: none;
@@ -114,6 +114,7 @@
         right: -100%;
         background-color: #0000006e;
         row-gap: 10px;
+        z-index: 10;
     }
 
     &.open {

@@ -43,7 +43,7 @@
                 <li class="footer-item">
                     <form class="footer-sub-form">
                         <input class="footer-sub-form__input" type="email" placeholder="Email Address">
-                        <button class="footer-sub-form__btn"><img src="<?php bloginfo('template_url'); ?>/assets/images/footer/arrow.svg"
+                        <button class="footer-sub-form__btn" disabled><img src="<?php bloginfo('template_url'); ?>/assets/images/footer/arrow.svg"
                                 alt=""></button>
                     </form></a>
                 </li>

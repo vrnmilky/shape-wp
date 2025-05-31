@@ -14,7 +14,7 @@
             <form action="" class="subscribe-form">
                 <img class="subscribe-form-img" src="<?php bloginfo('template_url'); ?>/assets/images/subscribe/mail.svg" alt="">
                 <input class="subscribe-form-input" type="email" placeholder="Введите email">
-                <button class="subscribe-form-btn btn">Регистрация</button>
+                <button class="subscribe-form-btn btn" disabled>Регистрация</button>
             </form>
         </div>
     </div>

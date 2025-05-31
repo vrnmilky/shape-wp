@@ -39,6 +39,8 @@
                             'class' => 'popular-card__img',
                             'width' => '380',
                             'height' => '247',
+                            'alt' => 'Фото популярной мебели',
+                            'title' => 'Популярная мебель'
                         ]);
                         ?></a>
                     <div class="popular-card-container">
@@ -52,10 +54,9 @@
                         </div>
                         <div class="popular-card__price">
                             <?php
-                            // Получаем цену из метаполя
+
                             $price = get_post_meta(get_the_ID(), '_product_price', true);
 
-                            // Если цена существует, выводим её
                             if ($price) {
                                 echo esc_html($price) . ' ₽</p>';
                             } else {

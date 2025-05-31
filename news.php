@@ -16,7 +16,6 @@ Template Name: news
 
 
         <?php
-        // задаем нужные нам критерии выборки данных из БД
         $args = array(
             'posts_per_page' => -1,
             'orderby' => 'comment_count'

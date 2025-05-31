@@ -1,16 +1,16 @@
 function getPostsPerPage() {
     if (window.innerWidth >= 1260) {
-        return 3; // Для экранов шириной от 1260px и выше
+        return 3;
     }
     else if (window.innerWidth >= 993) {
-        return 4; // Для экранов шириной от 993px до 1259px
+        return 4;
     }
     else {
-        return 2; // Для экранов шириной менее 993px
+        return 2;
     }
 }
 
-// Получаем количество постов на странице
+
 let postsPerPage = getPostsPerPage();
 
 

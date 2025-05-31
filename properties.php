@@ -53,6 +53,8 @@ Template Name: popular
                                 'class' => 'popular-card__img',
                                 'width' => '380',
                                 'height' => '247',
+                                'alt' => 'Фото популярной мебели',
+                                'title' => 'Популярная мебель'
                             ]);
                             ?></a>
                         <div class="popular-card-container">

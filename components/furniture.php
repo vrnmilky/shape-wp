@@ -21,7 +21,7 @@
         <div class="furniture__content">
             <div class="furniture__left">
                 <div class="furniture__img">
-                    <img id="furnitureImg" src="<?php bloginfo('template_url'); ?>/assets/images/furniture/office.jpg" alt="" width="553"
+                    <img id="furnitureImg" src="<?php bloginfo('template_url'); ?>/assets/images/furniture/office.jpg" alt="Фото офиса" title="фото офиса" width="553"
                         height="390">
                 </div>
 

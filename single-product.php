@@ -5,7 +5,12 @@
         <div class="container">
             <div class="product-detail-container">
                 <div class="product-detail-left">
-                    <?php the_post_thumbnail(); ?>
+                    <?php
+echo get_the_post_thumbnail( get_the_ID(), 'full', array(
+    'alt'   => 'Фото продукции',
+    'title' => 'Фото продукции',
+) );
+?>
                 </div>
                 <div class="product-detail-right">
                     <h1 class="product-detail-title"><?php the_title(); ?></h1>

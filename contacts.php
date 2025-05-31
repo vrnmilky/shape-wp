@@ -54,7 +54,7 @@ Template Name: contacts
                                                     echo $map;
                                                 }
                                                 else {
-                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image-map.jpg" alt="Заглушка">'; 
+                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image-map.jpg" alt="Заглушка" title="Заглушка карты">'; 
                                                 } ?>
                                             </div>
 
@@ -79,7 +79,7 @@ Template Name: contacts
                                                 if (has_post_thumbnail()) {
                                                     the_post_thumbnail(); // Выводим изображение с заданным размером
                                                 } else {
-                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image-office.jpg" alt="Заглушка" class="default-thumbnail">';
+                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image-office.jpg" alt="Заглушка" title="Заглушка офиса" class="default-thumbnail">';
                                                 }
                                                 ?>
                                             </div>

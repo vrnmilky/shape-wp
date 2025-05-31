@@ -1,7 +1,8 @@
 <section class="customers">
     <div class="container customers__container">
         <div class="customers__left">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/costumers/1.jpg" alt="" width="460" height="493">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/costumers/1.jpg"                 alt="Фото тумбочки" 
+                title="Фото тумбочки"  width="460" height="493">
         </div>
 
         <div class="customers__right">

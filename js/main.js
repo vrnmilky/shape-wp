@@ -53,9 +53,9 @@ function debounce(func, delay) {
     return function () {
         const context = this;
         const args = arguments;
-        clearTimeout(timeout); // Очистить предыдущий таймаут
+        clearTimeout(timeout); 
         timeout = setTimeout(function () {
-            func.apply(context, args); // Вызвать функцию после задержки
+            func.apply(context, args);
         }, delay);
     };
 }

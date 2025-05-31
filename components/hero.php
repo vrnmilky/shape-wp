@@ -1,7 +1,7 @@
 <section class="hero container">
         <div class="hero__container ">
             <div class="hero__left">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/hero-bg.jpg" alt="">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/hero-bg.jpg" alt="Фото стула" title="Фото стула">
             </div>
 
             <div class="hero__right">

@@ -18,7 +18,6 @@ add_action('wp_enqueue_scripts', 'theme_name_scripts');
 function theme_name_scripts()
 {
 
-    // Подключаем основной CSS файл
     wp_enqueue_style('main', get_template_directory_uri() . '/styles/main.css');
 
 
@@ -89,7 +88,6 @@ add_theme_support('post-thumbnails');
 add_theme_support('title-tag');
 add_theme_support('custom-logo ');
 
-// http://localhost:8080/wp-admin/admin-ajax.php?action=count_product?size=1
 
 add_action('wp_ajax_count_product', 'count_product');
 add_action('wp_ajax_nopriv_count_product', 'count_product');
@@ -102,10 +100,8 @@ function count_product()
 }
 
 
-// Удалить пустые P
 function remove_empty_paragraphs($content)
 {
-    // Удаляет пустые <p></p>
     $content = preg_replace('/<p>\s*<\/p>/i', '', $content);
     return $content;
 }
@@ -114,11 +110,9 @@ add_filter('the_content', 'remove_empty_paragraphs');
 
 function custom_comment_form($args)
 {
-    // Изменим стандартные аргументы
     $args['title_reply'] = 'Оставьте комментарий';
     $args['label_submit'] = 'Отправить';
 
-    // Стилизация отдельных полей
     $args['comment_field'] =
         '<p class="news_comment_form-comment">
             <label for="comment" class="news_comment_form-label">Ваш комментарий:</label>
@@ -223,3 +217,6 @@ function custom_excerpt_more($more) {
     return '... <a class="read_more" href="' . get_permalink() . '">Читать далее</a>';
 }
 add_filter('excerpt_more', 'custom_excerpt_more');
+
+
+
